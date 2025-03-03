@@ -1,0 +1,470 @@
+body {
+  background-image: url("/src/assets/Back-Guitar.png"); /* Putanja do slike */
+  background-size: cover; /* Da se slika rasprostire preko cijelog ekrana */
+  background-repeat: no-repeat; /* Da se slika ne ponavlja */
+  margin: 0;
+  font-family: 'Nunito', sans-serif;
+}
+h1, h2, h3, p {
+  font-family: 'Nunito', sans-serif; /* Zamijenite 'Nunito' sa željenim fontom */
+}
+
+
+.extrapanel-div{
+  background-color: rgb(133, 117, 117);
+  color: white;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 63%;
+  height: 40%;
+}
+
+.mainElement {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem;
+  background-color: rgba(250, 250, 250, 0.4);
+  width: 50%;
+  height: 70%;
+  border-radius: 30px;
+  margin: auto; /* Horizontalno poravnanje na sredinu */
+  margin-top: auto; /* Vertikalno poravnanje na sredinu */
+  margin-bottom: auto; /* Vertikalno poravnanje na sredinu */
+  position: absolute; /* Postavljanje na sredinu stranice */
+  top: 0; /* Gornja granica */
+  bottom: 0; /* Donja granica */
+  left: 0; /* Lijeva granica */
+  right: 0; /* Desna granica */
+  box-shadow: 0 0 20px rgba(0, 0, 0, 1);
+}
+.fretboardContainer {
+  display: grid;
+  grid-template-columns: repeat(21, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  border: 0.1px solid gray;
+}
+.container-for-fret-numbers-for-scale{
+  display: grid;
+  grid-template-columns: repeat(21,1fr);
+  margin-top: 1vh;
+}
+
+.grid-for-x-0 p{
+  font-size: 1.5vh;
+}
+
+
+.chords-grid-borderless{
+  display: grid;
+  grid-template-columns: repeat(6,1fr);
+  grid-template-rows: repeat(5,1fr);
+  position: absolute;
+}
+.chords-cell-borderless{
+  position: relative; /* Relativno pozicioniranje */
+  width: 1.2vw;
+  height: 2.7vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid transparent;
+}
+.chords-circle{
+  position: absolute;
+  bottom: 0;
+  width: 1.5vh;
+  height: 1.5vh;
+  border-radius: 50%;
+  /*background-image: radial-gradient(circle at center, rgb(164, 236, 211) 15%, rgb(10, 168, 168)); /* Definicija gradijenta boje */
+  background-image: url("/src/assets/bright-wood.png");
+  background-size: contain;
+  z-index: 1;
+  border: 0.1px solid rgb(177, 175, 175);
+  box-shadow: 0 0px 7px rgba(0, 0, 0, 0.8);
+
+}
+
+
+.chordboardContainer {
+  background-image: url("/src/assets/wood.png");
+  background-size: cover;
+  display: grid;
+  grid-template-columns: repeat(5,1fr);
+  grid-template-rows: repeat(5,1fr);
+  border: 0.1px solid gray;
+  border-top: 10px solid black;
+}
+.chordCell {
+  position: relative; /* Relativno pozicioniranje */
+  border: 0.1px solid gray;
+  width: 1.2vw;
+  height: 2.7vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.arrow{
+  width: 1vw;
+  height: 1vw;
+}
+
+
+.fretboardContainerWithoutBorders {
+  display: grid;
+  grid-template-columns: repeat(22, 1fr);
+  grid-template-rows: repeat(6, 1fr);
+  border: 0.1px solid transparent;
+  position: absolute; /* Apsolutno pozicioniranje za .div2 */
+  top: -3.2vh; /* Postavljanje na vrh .overlapContainer */
+  left: -2.3vw; /* Postavljanje na lijevi rub .overlapContainer */
+}
+
+.cell {
+  position: relative; /* Relativno pozicioniranje */
+  border: 0.1px solid gray;
+  width: 2.3vw;
+  height: 3.2vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.cellNoBorder {
+  position: relative; /* Relativno pozicioniranje */
+  width: 2.3vw;
+  height: 3.2vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 0.1px solid transparent;
+}
+.cellNoBorder-fretnum{
+  position: relative; /* Relativno pozicioniranje */
+  width: 2.3vw;
+  height: 3.2vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 0.1px solid transparent;
+  font-size: xx-small;
+  font-weight: bolder;
+}
+
+.overlapContainer {
+  position: relative;
+  margin-bottom: auto;
+  /*background-color: rgba(250, 250, 250, 0.8);*/
+  background-image: url("/src/assets/white-texture1.jpg");
+  background-size: contain;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+  border-left: 0.5vw solid black;
+}
+
+.scale-box-container {
+  background-color: rgba(250, 250, 250, 0.8);
+  width: 90%;
+  height: 50%;
+  border: 0.1px solid rgb(177, 175, 175);
+  border-radius: 30px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: top;
+  padding: 2vw;
+}
+@media (max-height: 500px) {
+  .scale-box-container {
+    height: 80%;
+  }
+  .scale-box-container select {
+    font-size: 2vh;
+  }
+}
+
+.scale-box-container .form {
+  width: 60%;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group {
+  display: flex;
+  align-items: center; /* Poravnanje po vertikali */
+  margin-bottom: 10px; /* Dodajte razmak između grupa */
+}
+
+.form-group-scale {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.form-group-scale select {
+  flex: 1;
+  border-radius: 5px;
+  padding: 0.2vw;
+  width: 50%;
+  box-sizing: border-box;
+  margin-left: 1vw;
+  border-radius: 20px;
+  font-size: 0.7vw;
+}
+@media (max-height: 500px) {
+  .form-group-scale select {
+    font-size: 1.5vh;
+  };
+  .chord-box-container .form-group select{
+    font-size: 5vh;
+  }
+
+}
+
+.form-group-scale label{
+  font-family: 'Nunito', sans-serif;
+  font-size:  0.7vw;
+}
+
+
+.form-group label {
+  margin-right: 5px; /* Dodajte razmak s desne strane labele */
+  font-family: 'Nunito', sans-serif;
+  font-size:  0.7vw
+}
+
+h2 {
+  font-size: 1.6vh;
+}
+
+.form-group select {
+  flex: 1; /* Proširite select da popuni preostali prostor */
+  font-size:  0.7vw;
+}
+
+.form-group-checkbox-group{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.form-group-checkbox-group label {
+  font-size:  0.7vw;
+  margin-left: 4px;
+}
+.check-square{
+  width: 1.5vw;
+  height: 1.5vh;
+}
+
+.checkbox-group {
+  display: flex;
+}
+.checkbox-group label{
+  margin-left: 0.1vw;
+}
+
+.left-side-flex-column-citava-strana{
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: baseline;
+}
+
+.left-side-panel {
+  width: 50%;
+  height: 40%;
+  display: flex;
+  flex-direction: column;
+  row-gap: 10vh;
+}
+
+.right-side-panel {
+  width: 35%;
+  height: 80%;
+  background-color: rgba(250, 250, 250, 0.8);
+  border-radius: 30px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+.panel-main-container {
+  /*background-color: blue;*/
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  padding-left: 15vw;
+  padding-right: 5vw;
+  width: 100%;
+  margin-top: 2vh;
+}
+
+.circle {
+  position: absolute;
+  bottom: 0;
+  left: 25%;
+  transform: translateY(50%);
+  width: 2.3vh;
+  height: 2.3vh;
+  border-radius: 50%;
+  /*background-image: radial-gradient(circle at center, rgb(164, 236, 211) 15%, rgb(10, 168, 168)); /* Definicija gradijenta boje */
+  background-image: url("/src/assets/wood.png");
+  background-size: contain;
+  z-index: 1;
+  border: 0.1px solid rgb(177, 175, 175);
+  box-shadow: 0 0px 7px rgba(0, 0, 0, 0.8);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.5vw;
+  color: white;
+}
+
+.black-circle {
+  width: 1.1vh;
+  height: 1.1vh;
+  border-radius: 50%;
+  background-color: black;
+}
+
+
+
+/*CHORD BOX DIO */
+.chord-box-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  justify-content: top;
+  padding-top: 3vh;
+  align-items: center;
+  height: 100%; /* Prilagodite visinu po potrebi */
+}
+
+.chord-box-container .form {
+  width: 50%;
+}
+
+.chord-box-container .form-group {
+  display: flex;
+  align-items: center; /* Poravnanje po vertikali */
+  margin-bottom:1.6vh; /* Dodajte razmak između grupa */
+  z-index: 1;
+}
+
+.chord-box-container .form-group label {
+  margin-right: 10px; /* Dodajte razmak s desne strane labele */
+}
+
+.chord-box-container .form-group input[type="text"] {
+  border-radius: 5px; /* Zaobljene ivice */
+  padding: 5px; /* Dodajte unutarnji razmak */
+  flex: 1; /* Proširite elemente da popune preostali prostor */
+  border-radius: 20px;
+  width: 100%;
+  padding-left: calc(40% - 12.5px); /* Pola širine minus polovina veličine fonta */
+}
+
+.chord-box-container .form-group select {
+  border-radius: 20px; /* Zaobljene ivice */
+  padding: 0.2vw; /* Dodajte unutarnji razmak */
+  flex: 1; /* Proširite elemente da popune preostali prostor */
+  height: 100%;
+}
+
+.chord-box-container .form-group select {
+  flex: 1; /* Proširite select da popuni preostali prostor */
+}
+
+.root-select-et{
+  margin-left: 1.4vw;
+}
+
+.chord-positions-box {
+  position: relative; /* Postavljamo relativni položaj kako bih apsolutno pozicionirali prvi div */
+  border-radius: 30px;
+  background-color: rgba(226, 222, 219, 0.8);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  column-gap: 1px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  padding: 2px;
+}
+
+.bottom-chord-container{
+  display: flex;
+  width: 70%;
+  height: 60%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.container-for-chord-column{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 2vh;
+  padding-bottom: 2vh;
+}
+
+.grid-for-x-0{
+  display: grid;
+  grid-template-columns: repeat(6,1fr);
+  height: 2.5vh;
+  padding-top: 1.5vh;
+}
+
+.grid-for-x-0 p {
+  margin: 0px;
+}
+
+.container-for-chord-overlap{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+h2 {
+  margin: 0px;
+  margin-bottom: 4px;
+}
+
+.container-for-fret-numbers{
+  display: grid;
+  grid-template-rows: repeat(5,1fr);
+  gap: 1.2vh;
+  margin-top: 2.4vh;
+  margin-left: 1vw;
+  position: absolute; /* Apsolutno pozicioniranje prvog diva */
+  top: 10%; /* Postavljanje na vrh roditeljskog kontejnera */
+  left: 0; /* Postavljanje na levi kraj roditeljskog kontejnera */
+  width: auto; /* Automatsko podešavanje širine na osnovu sadržaja */
+  height: 60%; /* Podešavanje visine na 100% visine roditeljskog kontejnera */
+}
+
+.arrow-container{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  column-gap: 1vw;
+  padding-bottom: 0.6vh;
+}
+
+.container-for-fret-numbers p{
+  margin: 0px;
+  font-size: 1.4vh;
+}
+/*CHORD KRAJ */
